@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.instances-box {
+    border: 1px solid;
+    border-radius: 20px;
+    width: 380px;
+    padding: 10px;
+}
+
+.instance-widget {
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.worklog-box {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 380px;
+    padding: 10px;
+}
+
+.add-instances-button {
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+}
