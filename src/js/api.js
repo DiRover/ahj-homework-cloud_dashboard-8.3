@@ -1,12 +1,8 @@
 export default class API {
     constructor(url) {
       this.url = url;
-      this.response;
-      this.request;
-      this.instancesList;
-      this.currentInstaceId;
-      this.serverInfoMsg;
-      this.currentInstaceStatus;
+      this.response; //записываем ответ сервера
+      this.request; //записываем запрос на сервер
     }
   
     getWebSocket() {
@@ -14,44 +10,21 @@ export default class API {
     }
 
     createRequest(type, id) {
-      if (type === 'get list') {
+      if (type === 'get list') { //запрашиваем список серверов
         this.request = JSON.stringify({type: 'get list'});
-      } else if (type === 'create') {
+      } else if (type === 'create') { //создаём сервер
         this.request = JSON.stringify({type: 'create'});
-      } else if (type === 'pause') {
+      } else if (type === 'pause') {//останавливаем сервер
         this.request = JSON.stringify({type: 'pause', id: id});
-      } else if (type === 'play_arrow') {
+      } else if (type === 'play_arrow') {//запускам сервер
         this.request = JSON.stringify({type: 'play_arrow', id: id});
-      } else if (type === 'clear') {
+      } else if (type === 'clear') {//удаляем сервер
         this.request = JSON.stringify({type: 'clear', id: id});
       }
     }
 
-    responseHandler(e) {
+    responseHandler(e) {//обрабатываем ответ
       this.response = JSON.parse(e.data);
-      if (this.response.type === 'list') {
-        this.instancesList = this.response.list;
-        console.log(this.instancesList);
-      } else if (this.response.type === 'server info') {
-        this.currentInstaceId = this.response.id;
-        this.currentInstaceMsg = this.response.msg;
-      } else if (this.response.type === 'new instance') {
-        this.currentInstaceId = this.response.id;
-        this.currentInstaceStatus = this.response.status;
-        this.currentInstaceMsg = this.response.msg;
-      } else if (this.response.type === 'run') {
-        this.currentInstaceId = this.response.id;
-        this.currentInstaceStatus = this.response.status;
-        this.currentInstaceMsg = this.response.msg;
-      } else if (this.response.type === 'stop') {
-        this.currentInstaceId = this.response.id;
-        this.currentInstaceStatus = this.response.status;
-        this.currentInstaceMsg = this.response.msg;
-      } else if (this.response.type === 'kill') {
-        this.currentInstaceId = this.response.id;
-        this.currentInstaceStatus = this.response.status;
-        this.currentInstaceMsg = this.response.msg;
-      }
     }
 
     getDate() { //получаем текущею дату сообщения

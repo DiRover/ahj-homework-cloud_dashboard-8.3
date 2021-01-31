@@ -46,7 +46,9 @@
     border-radius: 20px;
     box-sizing: border-box;
     width: 380px;
+    height: 400px;
     padding: 10px;
+    overflow-y: auto;
 }
 
 .instance-widget {
@@ -79,7 +81,9 @@
     border-radius: 20px;
     box-sizing: border-box;
     width: 380px;
+    height: 400px;
     padding: 10px;
+    overflow-y: auto;
 }
 
 .add-instances-button {
