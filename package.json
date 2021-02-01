@@ -4,12 +4,11 @@
   "description": "cloud dashboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "jest": "jest --coverage",
+    "test": "jest --coverage",
     "buildbabel": "babel src -d dist"
   },
   "repository": {
