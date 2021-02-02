@@ -11,7 +11,7 @@ const worklog = document.querySelector('.worklog');
 const instancesContainer = document.querySelector('.container-instances');
 const worklogContainer = document.querySelector('.container-worklog');
 
-const url = 'ws://localhost:7070/ws';
+const url = 'wss://ws-8-3-server.herokuapp.com/ws' //'ws://localhost:7070/ws';
 const api = new API(url);
 let ws = api.getWebSocket();
 
